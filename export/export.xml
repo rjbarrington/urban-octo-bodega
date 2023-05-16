@@ -1,0 +1,553 @@
+<datapower-configuration version="3">
+    <export-details>
+        <description>Exported Configuration</description>
+        <user>admin</user>
+        <domain>default</domain>
+        <comment />
+        <product-id>software</product-id>
+        <product>IDG</product>
+        <display-product>IDG</display-product>
+        <model>IBM DataPower Gateway</model>
+        <display-model>IBM DataPower Gateway</display-model>
+        <device-name>********</device-name>
+        <serial-number>********</serial-number>
+        <firmware-version>IDG.10.0.1.4</firmware-version>
+        <display-firmware-version>IDG.10.0.1.4</display-firmware-version>
+        <firmware-build>********</firmware-build>
+        <delivery-type>LTS</delivery-type>
+        <firmware-timestamp>2021/07/15 15:38:08</firmware-timestamp>
+        <current-date>2023-05-15</current-date>
+        <current-time>20:57:20 EDT</current-time>
+        <reset-date>2023-05-15</reset-date>
+        <reset-time>20:47:25 EDT</reset-time>
+        <login-message />
+        <custom-ui-file />
+    </export-details>
+    <interface-data>
+        <interface name="eth0" type="Other" vers="ipv4" ip-addr="172.17.0.2" />
+        <interface name="eth1" type="Other" vers="ipv4" ip-addr="172.19.0.3" />
+    </interface-data>
+    <configuration domain="default">
+        <DomainSettings name="default" intrinsic="true"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <PasswordTreatment>masked</PasswordTreatment>
+            <ConfigDir>config:///</ConfigDir>
+        </DomainSettings>
+        <PasswordAlias name="kafka-client" xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <EncryptedPassword>********</EncryptedPassword>
+            <DomainSettings class="DomainSettings">default</DomainSettings>
+        </PasswordAlias>
+        <SSLClientProfile name="kafka-tls" xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Protocols>
+                <SSLv3>off</SSLv3>
+                <TLSv1d0>off</TLSv1d0>
+                <TLSv1d1>off</TLSv1d1>
+                <TLSv1d2>on</TLSv1d2>
+                <TLSv1d3>on</TLSv1d3>
+            </Protocols>
+            <Ciphers>AES_256_GCM_SHA384</Ciphers>
+            <Ciphers>CHACHA20_POLY1305_SHA256</Ciphers>
+            <Ciphers>AES_128_GCM_SHA256</Ciphers>
+            <Ciphers>ECDHE_ECDSA_WITH_AES_256_GCM_SHA384</Ciphers>
+            <Ciphers>ECDHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+            <Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA384</Ciphers>
+            <Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA384</Ciphers>
+            <Ciphers>ECDHE_ECDSA_WITH_AES_256_CBC_SHA</Ciphers>
+            <Ciphers>ECDHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+            <Ciphers>DHE_DSS_WITH_AES_256_GCM_SHA384</Ciphers>
+            <Ciphers>DHE_RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+            <Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+            <Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA256</Ciphers>
+            <Ciphers>DHE_RSA_WITH_AES_256_CBC_SHA</Ciphers>
+            <Ciphers>DHE_DSS_WITH_AES_256_CBC_SHA</Ciphers>
+            <Ciphers>RSA_WITH_AES_256_GCM_SHA384</Ciphers>
+            <Ciphers>RSA_WITH_AES_256_CBC_SHA256</Ciphers>
+            <Ciphers>RSA_WITH_AES_256_CBC_SHA</Ciphers>
+            <Ciphers>ECDHE_ECDSA_WITH_AES_128_GCM_SHA256</Ciphers>
+            <Ciphers>ECDHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+            <Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA256</Ciphers>
+            <Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+            <Ciphers>ECDHE_ECDSA_WITH_AES_128_CBC_SHA</Ciphers>
+            <Ciphers>ECDHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+            <Ciphers>DHE_DSS_WITH_AES_128_GCM_SHA256</Ciphers>
+            <Ciphers>DHE_RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+            <Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+            <Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA256</Ciphers>
+            <Ciphers>DHE_RSA_WITH_AES_128_CBC_SHA</Ciphers>
+            <Ciphers>DHE_DSS_WITH_AES_128_CBC_SHA</Ciphers>
+            <Ciphers>RSA_WITH_AES_128_GCM_SHA256</Ciphers>
+            <Ciphers>RSA_WITH_AES_128_CBC_SHA256</Ciphers>
+            <Ciphers>RSA_WITH_AES_128_CBC_SHA</Ciphers>
+            <ValidateServerCert>off</ValidateServerCert>
+            <Caching>on</Caching>
+            <CacheTimeout>300</CacheTimeout>
+            <CacheSize>100</CacheSize>
+            <SSLClientFeatures>
+                <use-sni>on</use-sni>
+                <permit-insecure-servers>off</permit-insecure-servers>
+                <compression>off</compression>
+            </SSLClientFeatures>
+            <EllipticCurves>secp521r1</EllipticCurves>
+            <EllipticCurves>secp384r1</EllipticCurves>
+            <EllipticCurves>secp256k1</EllipticCurves>
+            <EllipticCurves>secp256r1</EllipticCurves>
+            <UseCustomSNIHostname>no</UseCustomSNIHostname>
+            <ValidateHostname>off</ValidateHostname>
+            <HostnameValidationFlags>
+                <X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>off</X509_CHECK_FLAG_ALWAYS_CHECK_SUBJECT>
+                <X509_CHECK_FLAG_NO_WILDCARDS>off</X509_CHECK_FLAG_NO_WILDCARDS>
+                <X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>off</X509_CHECK_FLAG_NO_PARTIAL_WILDCARDS>
+                <X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>off</X509_CHECK_FLAG_MULTI_LABEL_WILDCARDS>
+                <X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS>off</X509_CHECK_FLAG_SINGLE_LABEL_SUBDOMAINS>
+            </HostnameValidationFlags>
+            <HostnameValidationFailOnError>off</HostnameValidationFailOnError>
+            <EnableTLS13Compat>on</EnableTLS13Compat>
+        </SSLClientProfile>
+        <KafkaCluster name="ConfluentCloud1" xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Protocol>sasl_ssl</Protocol>
+            <Endpoint>
+                <Host>******.australiaeast.azure.confluent.cloud</Host>
+                <Port>9092</Port>
+            </Endpoint>
+            <SASLMechanism>plain</SASLMechanism>
+            <UserName>********</UserName>
+            <PasswordAlias class="PasswordAlias">kafka-client</PasswordAlias>
+            <Autocommit>off</Autocommit>
+            <SSLClient class="SSLClientProfile">kafka-tls</SSLClient>
+            <MemoryThreshold>268435456</MemoryThreshold>
+            <MaximumMessageSize>1048576</MaximumMessageSize>
+            <TotalConnectionLimit>2048</TotalConnectionLimit>
+            <AutoRetry>on</AutoRetry>
+            <RetryInterval>10</RetryInterval>
+        </KafkaCluster>
+        <KafkaSourceProtocolHandler name="avro_handler"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Cluster class="KafkaCluster">ConfluentCloud1</Cluster>
+            <RequestTopic>avro_datagen_topic</RequestTopic>
+            <ConsumerGroup>datapower</ConsumerGroup>
+            <BatchSize>1</BatchSize>
+        </KafkaSourceProtocolHandler>
+        <HTTPUserAgent name="default" intrinsic="true"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <UserSummary>Default User Agent</UserSummary>
+            <MaxRedirects>8</MaxRedirects>
+            <Timeout>300</Timeout>
+        </HTTPUserAgent>
+        <XMLManager name="default" intrinsic="true"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <UserSummary>Default XML-Manager</UserSummary>
+            <CacheMemorySize>2147483647</CacheMemorySize>
+            <CacheSize>256</CacheSize>
+            <SHA1Caching>on</SHA1Caching>
+            <StaticDocumentCalls>on</StaticDocumentCalls>
+            <SearchResults>on</SearchResults>
+            <SupportTxWarn>off</SupportTxWarn>
+            <Memoization>on</Memoization>
+            <ParserLimitsBytesScanned>4194304</ParserLimitsBytesScanned>
+            <ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+            <ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+            <ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+            <ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+            <ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+            <ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+            <ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+            <ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+            <DocCacheMaxDocs>5000</DocCacheMaxDocs>
+            <DocCacheSize>0</DocCacheSize>
+            <DocMaxWrites>32768</DocMaxWrites>
+            <UserAgent class="HTTPUserAgent">default</UserAgent>
+        </XMLManager>
+        <StylePolicy name="default" intrinsic="true"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <UserSummary>Default Processing Policy</UserSummary>
+            <DefStylesheetForSoap>store:///filter-reject-all.xsl</DefStylesheetForSoap>
+            <DefStylesheetForXsl>store:///identity.xsl</DefStylesheetForXsl>
+            <DefXQueryForJSON>store:///reject-all-json.xq</DefXQueryForJSON>
+        </StylePolicy>
+        <PolicyAttachments name="avro-gateway" xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <EnforcementMode>enforce</EnforcementMode>
+            <PolicyReferences>on</PolicyReferences>
+            <SLAEnforcementMode>allow-if-no-sla</SLAEnforcementMode>
+        </PolicyAttachments>
+        <MultiProtocolGateway name="avro-gateway"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Priority>normal</Priority>
+            <FrontProtocol class="KafkaSourceProtocolHandler">avro_handler</FrontProtocol>
+            <XMLManager class="XMLManager">default</XMLManager>
+            <SSLClientConfigType>proxy</SSLClientConfigType>
+            <DefaultParamNamespace>http://www.datapower.com/param/config</DefaultParamNamespace>
+            <QueryParamNamespace>http://www.datapower.com/param/query</QueryParamNamespace>
+            <BackendUrl>dpkafka://ConfluentCloud1?RequestTopic=avro_response_topic</BackendUrl>
+            <PropagateURI>on</PropagateURI>
+            <MonitorProcessingPolicy>terminate-at-first-throttle</MonitorProcessingPolicy>
+            <RequestAttachments>strip</RequestAttachments>
+            <ResponseAttachments>strip</ResponseAttachments>
+            <RequestAttachmentsFlowControl>off</RequestAttachmentsFlowControl>
+            <ResponseAttachmentsFlowControl>off</ResponseAttachmentsFlowControl>
+            <RootPartNotFirstAction>process-in-order</RootPartNotFirstAction>
+            <FrontAttachmentFormat>dynamic</FrontAttachmentFormat>
+            <BackAttachmentFormat>dynamic</BackAttachmentFormat>
+            <MIMEFrontHeaders>on</MIMEFrontHeaders>
+            <MIMEBackHeaders>on</MIMEBackHeaders>
+            <StreamOutputToBack>buffer-until-verification</StreamOutputToBack>
+            <StreamOutputToFront>buffer-until-verification</StreamOutputToFront>
+            <MaxMessageSize>0</MaxMessageSize>
+            <GatewayParserLimits>off</GatewayParserLimits>
+            <ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+            <ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+            <ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+            <ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+            <ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+            <ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+            <ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+            <ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+            <ParserLimitsAttachmentByteCount>2000000000</ParserLimitsAttachmentByteCount>
+            <ParserLimitsAttachmentPackageByteCount>0</ParserLimitsAttachmentPackageByteCount>
+            <DebugMode persisted="false">off</DebugMode>
+            <DebuggerType>internal</DebuggerType>
+            <DebugHistory>25</DebugHistory>
+            <FlowControl>off</FlowControl>
+            <SOAPSchemaURL>store:///schemas/soap-envelope.xsd</SOAPSchemaURL>
+            <FrontTimeout>120</FrontTimeout>
+            <BackTimeout>120</BackTimeout>
+            <FrontPersistentTimeout>180</FrontPersistentTimeout>
+            <BackPersistentTimeout>180</BackPersistentTimeout>
+            <IncludeResponseTypeEncoding>off</IncludeResponseTypeEncoding>
+            <PersistentConnections>on</PersistentConnections>
+            <LoopDetection>off</LoopDetection>
+            <DoHostRewriting>on</DoHostRewriting>
+            <DoChunkedUpload>off</DoChunkedUpload>
+            <ProcessHTTPErrors>on</ProcessHTTPErrors>
+            <HTTPClientIPLabel>X-Client-IP</HTTPClientIPLabel>
+            <HTTPLogCorIDLabel>X-Global-Transaction-ID</HTTPLogCorIDLabel>
+            <InOrderMode>
+                <Request>off</Request>
+                <Backend>off</Backend>
+                <Response>off</Response>
+            </InOrderMode>
+            <WSAMode>sync2sync</WSAMode>
+            <WSARequireAAA>on</WSARequireAAA>
+            <WSAStrip>on</WSAStrip>
+            <WSADefaultReplyTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultReplyTo>
+            <WSADefaultFaultTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultFaultTo>
+            <WSAForce>off</WSAForce>
+            <WSAGenStyle>sync</WSAGenStyle>
+            <WSAHTTPAsyncResponseCode>204</WSAHTTPAsyncResponseCode>
+            <WSATimeout>120</WSATimeout>
+            <WSRMEnabled>off</WSRMEnabled>
+            <WSRMSequenceExpiration>3600</WSRMSequenceExpiration>
+            <WSRMDestinationAcceptCreateSequence>on</WSRMDestinationAcceptCreateSequence>
+            <WSRMDestinationMaximumSequences>400</WSRMDestinationMaximumSequences>
+            <WSRMDestinationInOrder>off</WSRMDestinationInOrder>
+            <WSRMDestinationMaximumInOrderQueueLength>10</WSRMDestinationMaximumInOrderQueueLength>
+            <WSRMDestinationAcceptOffers>off</WSRMDestinationAcceptOffers>
+            <WSRMFrontForce>off</WSRMFrontForce>
+            <WSRMBackForce>off</WSRMBackForce>
+            <WSRMBackCreateSequence>off</WSRMBackCreateSequence>
+            <WSRMFrontCreateSequence>off</WSRMFrontCreateSequence>
+            <WSRMSourceMakeOffer>off</WSRMSourceMakeOffer>
+            <WSRMUsesSequenceSSL>off</WSRMUsesSequenceSSL>
+            <WSRMSourceMaximumSequences>400</WSRMSourceMaximumSequences>
+            <WSRMSourceRetransmissionInterval>10</WSRMSourceRetransmissionInterval>
+            <WSRMSourceExponentialBackoff>on</WSRMSourceExponentialBackoff>
+            <WSRMSourceMaximumRetransmissions>4</WSRMSourceMaximumRetransmissions>
+            <WSRMSourceMaximumQueueLength>30</WSRMSourceMaximumQueueLength>
+            <WSRMSourceRequestAckCount>1</WSRMSourceRequestAckCount>
+            <WSRMSourceInactivityClose>360</WSRMSourceInactivityClose>
+            <ForcePolicyExec>off</ForcePolicyExec>
+            <RewriteErrors>on</RewriteErrors>
+            <DelayErrors>on</DelayErrors>
+            <DelayErrorsDuration>1000</DelayErrorsDuration>
+            <BackHTTPVersion>HTTP/1.1</BackHTTPVersion>
+            <HTTP2Required>off</HTTP2Required>
+            <RequestType>unprocessed</RequestType>
+            <ResponseType>unprocessed</ResponseType>
+            <FollowRedirects>on</FollowRedirects>
+            <RewriteLocationHeader>off</RewriteLocationHeader>
+            <StylePolicy class="StylePolicy">default</StylePolicy>
+            <Type>static-backend</Type>
+            <AllowCompression>off</AllowCompression>
+            <EnableCompressedPayloadPassthrough>off</EnableCompressedPayloadPassthrough>
+            <AllowCacheControlHeader>off</AllowCacheControlHeader>
+            <PolicyAttachments class="PolicyAttachments">avro-gateway</PolicyAttachments>
+            <WSMAgentMonitor>off</WSMAgentMonitor>
+            <WSMAgentMonitorPCM>all-messages</WSMAgentMonitorPCM>
+            <ProxyHTTPResponse>off</ProxyHTTPResponse>
+            <TransactionTimeout>0</TransactionTimeout>
+        </MultiProtocolGateway>
+        <KafkaSourceProtocolHandler name="datagenhandler"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Cluster class="KafkaCluster">ConfluentCloud1</Cluster>
+            <RequestTopic>datagen_topic</RequestTopic>
+            <ResponseTopic>response_topic</ResponseTopic>
+            <ConsumerGroup>datapower</ConsumerGroup>
+            <BatchSize>1</BatchSize>
+        </KafkaSourceProtocolHandler>
+        <Matching name="__default-accept-service-providers__" intrinsic="true" read-only="true"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <UserSummary>Match all messages.</UserSummary>
+            <MatchRules>
+                <Type>url</Type>
+                <HttpTag />
+                <HttpValue />
+                <Url>*</Url>
+                <ErrorCode />
+                <XPATHExpression />
+                <Method>default</Method>
+                <CustomMethod />
+            </MatchRules>
+            <MatchWithPCRE>off</MatchWithPCRE>
+            <CombineWithOr>off</CombineWithOr>
+        </Matching>
+        <StylePolicyAction name="passthrough_rule_0_gatewayscript_0"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Type>gatewayscript</Type>
+            <Input>INPUT</Input>
+            <ParseSettingsReference>
+                <URL />
+                <Literal />
+                <Default />
+            </ParseSettingsReference>
+            <ParseMetricsResultType>none</ParseMetricsResultType>
+            <TransformLanguage>none</TransformLanguage>
+            <GatewayScriptLocation>local:///datapower.js</GatewayScriptLocation>
+            <ActionDebug persisted="false">off</ActionDebug>
+            <Output>PIPE</Output>
+            <NoTranscodeUtf8>off</NoTranscodeUtf8>
+            <NamedInOutLocationType>default</NamedInOutLocationType>
+            <SSLClientConfigType>proxy</SSLClientConfigType>
+            <Transactional>off</Transactional>
+            <SOAPValidation>body</SOAPValidation>
+            <SQLSourceType>static</SQLSourceType>
+            <JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+            <Asynchronous>off</Asynchronous>
+            <ResultsMode>first-available</ResultsMode>
+            <RetryCount>0</RetryCount>
+            <RetryInterval>1000</RetryInterval>
+            <MultipleOutputs>off</MultipleOutputs>
+            <IteratorType>XPATH</IteratorType>
+            <Timeout>0</Timeout>
+            <MethodRewriteType>GET</MethodRewriteType>
+            <MethodType>POST</MethodType>
+            <MethodType2>POST</MethodType2>
+        </StylePolicyAction>
+        <StylePolicyAction name="passthrough_rule_0_results_output_0"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Type>results</Type>
+            <Input>PIPE</Input>
+            <ParseSettingsReference>
+                <URL />
+                <Literal />
+                <Default />
+            </ParseSettingsReference>
+            <ParseMetricsResultType>none</ParseMetricsResultType>
+            <TransformLanguage>none</TransformLanguage>
+            <ActionDebug persisted="false">off</ActionDebug>
+            <NoTranscodeUtf8>off</NoTranscodeUtf8>
+            <NamedInOutLocationType>default</NamedInOutLocationType>
+            <SSLClientConfigType>proxy</SSLClientConfigType>
+            <OutputType>default</OutputType>
+            <Transactional>off</Transactional>
+            <SOAPValidation>body</SOAPValidation>
+            <SQLSourceType>static</SQLSourceType>
+            <JWSVerifyStripSignature>on</JWSVerifyStripSignature>
+            <Asynchronous>off</Asynchronous>
+            <ResultsMode>first-available</ResultsMode>
+            <RetryCount>0</RetryCount>
+            <RetryInterval>1000</RetryInterval>
+            <MultipleOutputs>off</MultipleOutputs>
+            <IteratorType>XPATH</IteratorType>
+            <Timeout>0</Timeout>
+            <MethodRewriteType>GET</MethodRewriteType>
+            <MethodType>POST</MethodType>
+            <MethodType2>POST</MethodType2>
+        </StylePolicyAction>
+        <StylePolicyRule name="passthrough_rule_0"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Actions class="StylePolicyAction">passthrough_rule_0_gatewayscript_0</Actions>
+            <Actions class="StylePolicyAction">passthrough_rule_0_results_output_0</Actions>
+            <Direction>request-rule</Direction>
+            <InputFormat>none</InputFormat>
+            <OutputFormat>none</OutputFormat>
+            <NonXMLProcessing>off</NonXMLProcessing>
+            <Unprocessed>off</Unprocessed>
+        </StylePolicyRule>
+        <StylePolicy name="passthrough" xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <DefStylesheetForSoap>store:///filter-reject-all.xsl</DefStylesheetForSoap>
+            <DefStylesheetForXsl>store:///identity.xsl</DefStylesheetForXsl>
+            <DefXQueryForJSON>store:///reject-all-json.xq</DefXQueryForJSON>
+            <PolicyMaps>
+                <Match class="Matching">__default-accept-service-providers__</Match>
+                <Rule class="StylePolicyRule">passthrough_rule_0</Rule>
+            </PolicyMaps>
+        </StylePolicy>
+        <PolicyAttachments name="kafka-gateway" xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <EnforcementMode>enforce</EnforcementMode>
+            <PolicyReferences>on</PolicyReferences>
+            <SLAEnforcementMode>allow-if-no-sla</SLAEnforcementMode>
+        </PolicyAttachments>
+        <MultiProtocolGateway name="kafka-gateway"
+            xmlns:env="http://www.w3.org/2003/05/soap-envelope"
+            xmlns:dp="http://www.datapower.com/schemas/management">
+            <mAdminState>enabled</mAdminState>
+            <Priority>normal</Priority>
+            <FrontProtocol class="KafkaSourceProtocolHandler">datagenhandler</FrontProtocol>
+            <XMLManager class="XMLManager">default</XMLManager>
+            <SSLClientConfigType>proxy</SSLClientConfigType>
+            <HeaderInjection>
+                <Direction>back</Direction>
+                <HeaderTag>Authorization</HeaderTag>
+                <HeaderTagValue>Splunk 53511251-933C-4BD6-9A49-fE1A0DCC687C</HeaderTagValue>
+            </HeaderInjection>
+            <DefaultParamNamespace>http://www.datapower.com/param/config</DefaultParamNamespace>
+            <QueryParamNamespace>http://www.datapower.com/param/query</QueryParamNamespace>
+            <BackendUrl>http://splunk:8088/services/collector/raw</BackendUrl>
+            <PropagateURI>on</PropagateURI>
+            <MonitorProcessingPolicy>terminate-at-first-throttle</MonitorProcessingPolicy>
+            <RequestAttachments>strip</RequestAttachments>
+            <ResponseAttachments>strip</ResponseAttachments>
+            <RequestAttachmentsFlowControl>off</RequestAttachmentsFlowControl>
+            <ResponseAttachmentsFlowControl>off</ResponseAttachmentsFlowControl>
+            <RootPartNotFirstAction>process-in-order</RootPartNotFirstAction>
+            <FrontAttachmentFormat>dynamic</FrontAttachmentFormat>
+            <BackAttachmentFormat>dynamic</BackAttachmentFormat>
+            <MIMEFrontHeaders>on</MIMEFrontHeaders>
+            <MIMEBackHeaders>on</MIMEBackHeaders>
+            <StreamOutputToBack>buffer-until-verification</StreamOutputToBack>
+            <StreamOutputToFront>buffer-until-verification</StreamOutputToFront>
+            <MaxMessageSize>0</MaxMessageSize>
+            <GatewayParserLimits>off</GatewayParserLimits>
+            <ParserLimitsElementDepth>512</ParserLimitsElementDepth>
+            <ParserLimitsAttributeCount>128</ParserLimitsAttributeCount>
+            <ParserLimitsMaxNodeSize>33554432</ParserLimitsMaxNodeSize>
+            <ParserLimitsForbidExternalReferences>on</ParserLimitsForbidExternalReferences>
+            <ParserLimitsExternalReferences>forbid</ParserLimitsExternalReferences>
+            <ParserLimitsMaxPrefixes>1024</ParserLimitsMaxPrefixes>
+            <ParserLimitsMaxNamespaces>1024</ParserLimitsMaxNamespaces>
+            <ParserLimitsMaxLocalNames>60000</ParserLimitsMaxLocalNames>
+            <ParserLimitsAttachmentByteCount>2000000000</ParserLimitsAttachmentByteCount>
+            <ParserLimitsAttachmentPackageByteCount>0</ParserLimitsAttachmentPackageByteCount>
+            <DebugMode persisted="false">off</DebugMode>
+            <DebuggerType>internal</DebuggerType>
+            <DebugHistory>25</DebugHistory>
+            <FlowControl>off</FlowControl>
+            <SOAPSchemaURL>store:///schemas/soap-envelope.xsd</SOAPSchemaURL>
+            <FrontTimeout>120</FrontTimeout>
+            <BackTimeout>120</BackTimeout>
+            <FrontPersistentTimeout>180</FrontPersistentTimeout>
+            <BackPersistentTimeout>180</BackPersistentTimeout>
+            <IncludeResponseTypeEncoding>off</IncludeResponseTypeEncoding>
+            <PersistentConnections>on</PersistentConnections>
+            <LoopDetection>off</LoopDetection>
+            <DoHostRewriting>on</DoHostRewriting>
+            <DoChunkedUpload>off</DoChunkedUpload>
+            <ProcessHTTPErrors>on</ProcessHTTPErrors>
+            <HTTPClientIPLabel>X-Client-IP</HTTPClientIPLabel>
+            <HTTPLogCorIDLabel>X-Global-Transaction-ID</HTTPLogCorIDLabel>
+            <InOrderMode>
+                <Request>off</Request>
+                <Backend>off</Backend>
+                <Response>off</Response>
+            </InOrderMode>
+            <WSAMode>sync2sync</WSAMode>
+            <WSARequireAAA>on</WSARequireAAA>
+            <WSAStrip>on</WSAStrip>
+            <WSADefaultReplyTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultReplyTo>
+            <WSADefaultFaultTo>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</WSADefaultFaultTo>
+            <WSAForce>off</WSAForce>
+            <WSAGenStyle>sync</WSAGenStyle>
+            <WSAHTTPAsyncResponseCode>204</WSAHTTPAsyncResponseCode>
+            <WSATimeout>120</WSATimeout>
+            <WSRMEnabled>off</WSRMEnabled>
+            <WSRMSequenceExpiration>3600</WSRMSequenceExpiration>
+            <WSRMDestinationAcceptCreateSequence>on</WSRMDestinationAcceptCreateSequence>
+            <WSRMDestinationMaximumSequences>400</WSRMDestinationMaximumSequences>
+            <WSRMDestinationInOrder>off</WSRMDestinationInOrder>
+            <WSRMDestinationMaximumInOrderQueueLength>10</WSRMDestinationMaximumInOrderQueueLength>
+            <WSRMDestinationAcceptOffers>off</WSRMDestinationAcceptOffers>
+            <WSRMFrontForce>off</WSRMFrontForce>
+            <WSRMBackForce>off</WSRMBackForce>
+            <WSRMBackCreateSequence>off</WSRMBackCreateSequence>
+            <WSRMFrontCreateSequence>off</WSRMFrontCreateSequence>
+            <WSRMSourceMakeOffer>off</WSRMSourceMakeOffer>
+            <WSRMUsesSequenceSSL>off</WSRMUsesSequenceSSL>
+            <WSRMSourceMaximumSequences>400</WSRMSourceMaximumSequences>
+            <WSRMSourceRetransmissionInterval>10</WSRMSourceRetransmissionInterval>
+            <WSRMSourceExponentialBackoff>on</WSRMSourceExponentialBackoff>
+            <WSRMSourceMaximumRetransmissions>4</WSRMSourceMaximumRetransmissions>
+            <WSRMSourceMaximumQueueLength>30</WSRMSourceMaximumQueueLength>
+            <WSRMSourceRequestAckCount>1</WSRMSourceRequestAckCount>
+            <WSRMSourceInactivityClose>360</WSRMSourceInactivityClose>
+            <ForcePolicyExec>off</ForcePolicyExec>
+            <RewriteErrors>on</RewriteErrors>
+            <DelayErrors>on</DelayErrors>
+            <DelayErrorsDuration>1000</DelayErrorsDuration>
+            <BackHTTPVersion>HTTP/1.1</BackHTTPVersion>
+            <HTTP2Required>off</HTTP2Required>
+            <RequestType>json</RequestType>
+            <ResponseType>unprocessed</ResponseType>
+            <FollowRedirects>on</FollowRedirects>
+            <RewriteLocationHeader>off</RewriteLocationHeader>
+            <StylePolicy class="StylePolicy">passthrough</StylePolicy>
+            <Type>static-backend</Type>
+            <AllowCompression>off</AllowCompression>
+            <EnableCompressedPayloadPassthrough>off</EnableCompressedPayloadPassthrough>
+            <AllowCacheControlHeader>off</AllowCacheControlHeader>
+            <PolicyAttachments class="PolicyAttachments">kafka-gateway</PolicyAttachments>
+            <WSMAgentMonitor>off</WSMAgentMonitor>
+            <WSMAgentMonitorPCM>all-messages</WSMAgentMonitorPCM>
+            <ProxyHTTPResponse>off</ProxyHTTPResponse>
+            <TransactionTimeout>0</TransactionTimeout>
+        </MultiProtocolGateway>
+    </configuration>
+    <files>
+        <file name="local:///datapower.js" src="local/datapower.js" location="local"
+            hash="UH/jBw+lXaHG+JBx8qkiSIRLkjw=" />
+        <file name="webgui:///clixform.xsl" src="dp-aux/clixform.xsl" location="dp-aux"
+            internal="true" hash="OBXhoh1ntXVXE/oNRysVdSHNjLQ=" />
+        <file name="webgui:///SchemaUtil.xsl" src="dp-aux/SchemaUtil.xsl" location="dp-aux"
+            internal="true" hash="lDu5pgpeu28YNaWBHTh+kiURBQs=" />
+        <file name="webgui:///management.xsl" src="dp-aux/management.xsl" location="dp-aux"
+            internal="true" hash="pi0c46mGrlbqTpsWjG3QUxFOCYU=" />
+        <file name="webgui:///map-dmz.xsl" src="dp-aux/map-dmz.xsl" location="dp-aux"
+            internal="true" hash="S8LbpfukTeInHK2d6DnQfdiZmd4=" />
+        <file name="webgui:///drMgmt.xml" src="dp-aux/drMgmt.xml" location="dp-aux" internal="true"
+            hash="qaHSaX9z31crXzipKj4L/s1SWw0=" />
+        <file name="webgui:///basetypes.xml" src="dp-aux/basetypes.xml" location="dp-aux"
+            internal="true" hash="HrLsg2FhC6fPlGYI25NijeP828E=" />
+    </files>
+</datapower-configuration>
